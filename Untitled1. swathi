@@ -1,0 +1,104 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMdbVPT7PSpE2lwOZECkFX+",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/chswathirmai/mlwec-ai-internship/blob/main/Untitled1.%20swathi\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pip install paho_mqtt\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lC_ZEIH5xSZo",
+        "outputId": "b4c2138e-f3c6-4d03-bb8e-382e9ed3f3b5"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/\n",
+            "Collecting paho_mqtt\n",
+            "  Downloading paho-mqtt-1.6.1.tar.gz (99 kB)\n",
+            "\u001b[K     |████████████████████████████████| 99 kB 3.8 MB/s \n",
+            "\u001b[?25hBuilding wheels for collected packages: paho-mqtt\n",
+            "  Building wheel for paho-mqtt (setup.py) ... \u001b[?25l\u001b[?25hdone\n",
+            "  Created wheel for paho-mqtt: filename=paho_mqtt-1.6.1-py3-none-any.whl size=62133 sha256=283850ad1ab2370f5e84e965b651cf613e2174e939178031a00c178ffd5e353d\n",
+            "  Stored in directory: /root/.cache/pip/wheels/d0/bf/ac/2b3f43f8c6fcd0f4ba5395397458c521eb0b52d33b574a5a40\n",
+            "Successfully built paho-mqtt\n",
+            "Installing collected packages: paho-mqtt\n",
+            "Successfully installed paho-mqtt-1.6.1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import paho.mqtt.client as mqtt\n",
+        "import json\n",
+        "import pandas as pd\n",
+        "pub=mqtt.Client()\n",
+        "pub.connect('broker.hivemq.com',1883)\n",
+        "print('broker connted')\n",
+        "pub.pubilsher('datapriates')\n",
+        "dataset=[]\n",
+        "i=0\n",
+        "def notification (sub,userdata,msg)\n",
+        "  global i\n",
+        "  data=(msg.payload).decode('ulf_8')\n",
+        "  data=json.loads(data)\n",
+        "  h=data['humidity']\n",
+        "  t=data['temperature']\n",
+        "  dummy=[]\n",
+        "  dummy.append(h)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 130
+        },
+        "id": "ZHNxz-zqzIy7",
+        "outputId": "a75213bd-977b-44d0-bd71-744571bf5382"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"<ipython-input-11-b11350761452>\"\u001b[0;36m, line \u001b[0;32m10\u001b[0m\n\u001b[0;31m    def notification (sub,userdata,msg)\u001b[0m\n\u001b[0m                                       ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
